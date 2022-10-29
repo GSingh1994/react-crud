@@ -1,5 +1,12 @@
+import Task from "./Task";
+import "./TaskList.scss";
 const TaskList = () => {
-  return <h1>Tasklist</h1>;
+  return (
+    <div className="TaskList">
+      <h1>Tasklist</h1>
+      <Task />
+    </div>
+  );
 };
 
 export default TaskList;
