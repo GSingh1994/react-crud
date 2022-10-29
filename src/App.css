@@ -1,0 +1,10 @@
+* {
+  background-color: grey;
+  color: aliceblue;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
