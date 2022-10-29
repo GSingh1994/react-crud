@@ -1,8 +1,10 @@
-const Task = () => {
+const Task = ({ taskList }) => {
   return (
     <>
       <ul>
-        <li>Buy eggs</li>
+        {taskList.map((task, i) => (
+          <li key={i}>{task}</li>
+        ))}
       </ul>
     </>
   );

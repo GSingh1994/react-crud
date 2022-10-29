@@ -5,10 +5,12 @@ import { useState } from "react";
 
 const TaskList = () => {
   const [task, setTask] = useState("");
+  const [taskList, setTaskList] = useState([]);
 
   const addNewTask = (e) => {
     e.preventDefault();
-    console.log(task);
+    setTaskList([...taskList, task]);
+    setTask("");
   };
   return (
     <div className="TaskList">
@@ -17,7 +19,7 @@ const TaskList = () => {
         <input type="text" value={task} onChange={(e) => setTask(e.target.value)} />
         <button onClick={addNewTask}>Add</button>
       </form>
-      <Task />
+      <Task taskList={taskList} />
     </div>
   );
 };
