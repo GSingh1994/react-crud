@@ -19,7 +19,7 @@ const TaskList = () => {
         <input type="text" value={task} onChange={(e) => setTask(e.target.value)} />
         <button onClick={addNewTask}>Add</button>
       </form>
-      <Task taskList={taskList} />
+      <Task taskList={taskList} setTaskList={setTaskList} />
     </div>
   );
 };
