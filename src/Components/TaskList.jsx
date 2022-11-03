@@ -1,8 +1,7 @@
+import { useState } from "react";
 import Task from "./Task";
 import "./TaskList.scss";
 import addIcon from "../assets/add.svg";
-
-import { useState } from "react";
 
 const TaskList = () => {
   const [task, setTask] = useState("");
@@ -13,11 +12,16 @@ const TaskList = () => {
     setTaskList([...taskList, task]);
     setTask("");
   };
+
+  const createTask = (value) => {
+    setTask(value);
+  };
+
   return (
     <div className="TaskList">
       <h1 className="TaskList__title">To-Do List</h1>
-      <form>
-        <input type="text" value={task} onChange={(e) => setTask(e.target.value)} />
+      <form onSubmit={(e) => addNewTask(e)}>
+        <input type="text" value={task} onChange={(e) => createTask(e.target.value)} />
         <img src={addIcon} onClick={addNewTask}></img>
       </form>
       <Task taskList={taskList} setTaskList={setTaskList} />
