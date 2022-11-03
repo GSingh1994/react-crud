@@ -1,3 +1,6 @@
+import "./Task.scss";
+import deleteIcon from "../assets/trash.svg";
+
 const Task = ({ taskList, setTaskList }) => {
   const deleteTask = (currentTaskIndex) => {
     const newList = taskList.filter((e, index) => index !== currentTaskIndex);
@@ -11,13 +14,11 @@ const Task = ({ taskList, setTaskList }) => {
   };
 
   return (
-    <ul>
+    <ul className="Task">
       {taskList.map((task, i) => (
-        <li key={i}>
+        <li className="Task__main" key={i}>
+          <img className="Task__delete" src={deleteIcon} onClick={() => deleteTask(i)}></img>
           <input type="text" defaultValue={task} onChange={(e) => editTask(e.target.value, i)} />
-          <span onClick={() => deleteTask(i)} style={{ color: "red", cursor: "pointer" }}>
-            X
-          </span>
         </li>
       ))}
     </ul>

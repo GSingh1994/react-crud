@@ -1,0 +1,40 @@
+.Task {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0;
+  gap: 1rem;
+
+  .Task__delete {
+    visibility: hidden;
+    width: 1.6rem;
+    vertical-align: middle;
+    cursor: pointer;
+    filter: invert(77%) sepia(47%) saturate(1215%) hue-rotate(305deg) brightness(94%) contrast(103%);
+    &:hover ~ input {
+      text-decoration: line-through;
+    }
+
+    &:hover {
+      visibility: visible;
+      scale: 1.2;
+    }
+    transition: all ease 0.2s;
+  }
+
+  input {
+    background-color: inherit;
+    font-size: 1.1rem;
+    outline: none;
+    border: none;
+    padding-left: 1rem;
+  }
+
+  .Task__main {
+    &:hover > .Task__delete {
+      visibility: visible;
+    }
+  }
+}
