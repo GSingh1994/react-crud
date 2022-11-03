@@ -4,17 +4,17 @@ const Task = ({ taskList, setTaskList }) => {
     setTaskList(newList);
   };
 
-  const editTask = (i) => {
-    const newTask = prompt("enter new task");
+  const editTask = (value, i) => {
     const newTaskList = [...taskList];
-    newTaskList[i] = newTask;
+    newTaskList[i] = value;
     setTaskList(newTaskList);
   };
+
   return (
     <ul>
       {taskList.map((task, i) => (
-        <li key={i} onDoubleClick={() => editTask(i)}>
-          {task}
+        <li key={i}>
+          <input type="text" defaultValue={task} onChange={(e) => editTask(e.target.value, i)} />
           <span onClick={() => deleteTask(i)} style={{ color: "red", cursor: "pointer" }}>
             X
           </span>
