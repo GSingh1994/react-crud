@@ -1,7 +1,10 @@
+@import-normalize;
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
 .App {
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: Roboto;
+  margin-top: 6rem;
 }
