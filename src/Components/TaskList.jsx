@@ -1,5 +1,6 @@
 import Task from "./Task";
 import "./TaskList.scss";
+import addIcon from "../assets/add.svg";
 
 import { useState } from "react";
 
@@ -14,10 +15,10 @@ const TaskList = () => {
   };
   return (
     <div className="TaskList">
-      <h1>Tasklist</h1>
+      <h1 className="TaskList__title">To-Do List</h1>
       <form>
         <input type="text" value={task} onChange={(e) => setTask(e.target.value)} />
-        <button onClick={addNewTask}>Add</button>
+        <img src={addIcon} onClick={addNewTask}></img>
       </form>
       <Task taskList={taskList} setTaskList={setTaskList} />
     </div>
