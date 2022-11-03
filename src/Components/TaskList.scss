@@ -1,11 +1,18 @@
 .TaskList {
   border: 2px solid grey;
+  border-radius: 4px;
   padding: 1rem 2rem;
   text-align: center;
+  background-color: #faf0d7;
+  width: 20rem;
+  margin: 0 auto;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
   h1 {
     color: #2c3639;
     letter-spacing: 1px;
   }
+
   form {
     input {
       outline: none;
@@ -16,6 +23,7 @@
       width: 60%;
       font-size: 1.2rem;
       letter-spacing: 1px;
+      background-color: inherit;
     }
     img {
       width: 2.3rem;

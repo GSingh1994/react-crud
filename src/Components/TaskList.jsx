@@ -21,7 +21,7 @@ const TaskList = () => {
     <div className="TaskList">
       <h1 className="TaskList__title">To-Do List</h1>
       <form onSubmit={(e) => addNewTask(e)}>
-        <input type="text" value={task} onChange={(e) => createTask(e.target.value)} />
+        <input type="text" value={task} onChange={(e) => createTask(e.target.value)} placeholder="Enter new task" />
         <img src={addIcon} onClick={addNewTask}></img>
       </form>
       <Task taskList={taskList} setTaskList={setTaskList} />
