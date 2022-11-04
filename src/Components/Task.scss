@@ -1,11 +1,5 @@
 .Task {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  padding-left: 0;
-  gap: 1rem;
+  margin: 1rem 0;
 
   .Task__delete {
     visibility: hidden;
@@ -32,9 +26,7 @@
     padding-left: 1rem;
   }
 
-  .Task__main {
-    &:hover > .Task__delete {
-      visibility: visible;
-    }
+  &:hover > .Task__delete {
+    visibility: visible;
   }
 }
