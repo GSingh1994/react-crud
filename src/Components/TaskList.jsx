@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { nanoid } from "nanoid";
+
 import Task from "./Task";
 import "./TaskList.scss";
 import addIcon from "../assets/add.svg";
@@ -13,7 +15,7 @@ const TaskList = () => {
 
   const addNewTask = (e) => {
     e.preventDefault();
-    setTaskList([...taskList, task]);
+    setTaskList([...taskList, { id: nanoid(), taskName: task }]);
     setTask("");
   };
 
@@ -24,7 +26,7 @@ const TaskList = () => {
 
   const editTask = (value, i) => {
     const newTaskList = [...taskList];
-    newTaskList[i] = value;
+    newTaskList[i].taskName = value;
     setTaskList(newTaskList);
   };
 
@@ -38,7 +40,7 @@ const TaskList = () => {
       </form>
 
       {taskList.map((task, i) => (
-        <Task key={i} taskValue={task} taskIndex={i} deleteTask={deleteTask} editTask={editTask} />
+        <Task key={task.id} taskName={task.taskName} taskIndex={i} deleteTask={deleteTask} editTask={editTask} />
       ))}
     </div>
   );
