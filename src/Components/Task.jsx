@@ -4,7 +4,7 @@ import deleteIcon from "../assets/trash.svg";
 const Task = ({ taskName, deleteTask, editTask, taskIndex }) => {
   return (
     <div className="Task">
-      <img className="Task__delete" src={deleteIcon} onClick={() => deleteTask(taskIndex)}></img>
+      <img className="Task__delete" src={deleteIcon} onClick={() => deleteTask(taskIndex)} alt={"delete icon"}></img>
       <input type="text" defaultValue={taskName} onChange={(e) => editTask(e.target.value, taskIndex)} />
     </div>
   );
